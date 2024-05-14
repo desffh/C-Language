@@ -15,8 +15,8 @@ int main()
 	// 삽입 연산자 (<<)
 	// 스트림의 경우 입력된 데이터는 출력 장치로 전달하며,
 	// "<<" 연산자를 사용하여 자신이 참조한 값을 반환합니다.
-	// std::cout << "C++ Language" << std::endl;
-	// std::cout << "C# Language" << std::endl;
+	 //std::cout << "C++ Language" << std::endl;
+	 //std::cout << "C# Language" << std::endl;
 
 
 	// 스트림은 운영체제에 의해 생성되며, 스트림 자체에 버퍼라는
@@ -29,7 +29,7 @@ int main()
 	//int data = 0;
 	//std::cin >> data;
 	//std::cout << "data의 값: " << data;
-	//
+	
 	//int * ptr = new int;
 	//int* dynamicArray = new int[5]; //4byte 5개
 	//dynamicArray[4] = 99;
