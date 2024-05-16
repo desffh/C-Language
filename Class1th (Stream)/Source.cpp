@@ -30,19 +30,19 @@ int main()
 	//std::cin >> data;
 	//std::cout << "data의 값: " << data;
 	
-	//int * ptr = new int;
-	//int* dynamicArray = new int[5]; //4byte 5개
-	//dynamicArray[4] = 99;
-	//
-	//std::cout << "dynamicArray[4]의 값: " << dynamicArray[4] << std::endl;
-	//
-	//*ptr = 100;
-	//
-	//std::cout << "ptr이 가리키는 값: " << *ptr << std::endl;
-	//
-	//delete ptr;
-	////delete ptr; // 메모리가 해제되었는지 확인하려면 delete한번 더 함
-	//delete[ ] dynamicArray; // 0~N까지의 인덱스 메모리 다 삭제
+	int * ptr = new int;
+	int* dynamicArray = new int[5]; //4byte 5개
+	dynamicArray[4] = 99;
+	 
+	std::cout << "dynamicArray[4]의 값: " << dynamicArray[4] << std::endl;
+	
+	*ptr = 100;
+	
+	std::cout << "ptr이 가리키는 값: " << *ptr << std::endl;
+	
+	delete ptr;
+	//delete ptr; // 메모리가 해제되었는지 확인하려면 delete한번 더 함
+	delete[ ] dynamicArray; // 0~N까지의 인덱스 메모리 다 삭제
 
 #pragma endregion
 
