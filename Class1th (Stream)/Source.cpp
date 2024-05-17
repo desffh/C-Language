@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-
+// 중괄호 외부 <전역변수>
 char character = 'A';
 
 void Recovery(int& health)
@@ -15,8 +15,9 @@ int main()
 	// 삽입 연산자 (<<)
 	// 스트림의 경우 입력된 데이터는 출력 장치로 전달하며,
 	// "<<" 연산자를 사용하여 자신이 참조한 값을 반환합니다.
-	 //std::cout << "C++ Language" << std::endl;
-	 //std::cout << "C# Language" << std::endl;
+	//std::cout << "C++ Language" << std::endl;
+	
+	//std::cout << "C# Language" << std::endl;
 
 
 	// 스트림은 운영체제에 의해 생성되며, 스트림 자체에 버퍼라는
@@ -30,19 +31,20 @@ int main()
 	//std::cin >> data;
 	//std::cout << "data의 값: " << data;
 	
-	int * ptr = new int;
-	int* dynamicArray = new int[5]; //4byte 5개
-	dynamicArray[4] = 99;
+	// [동적할당new int] [동적배열new int[5]]
+	//int * ptr = new int;
+	//int* dynamicArray = new int[5]; //4byte 5개
+	//dynamicArray[4] = 99;
 	 
-	std::cout << "dynamicArray[4]의 값: " << dynamicArray[4] << std::endl;
+	//std::cout << "dynamicArray[4]의 값: " << dynamicArray[4] << std::endl;
 	
-	*ptr = 100;
+	//*ptr = 100;
 	
-	std::cout << "ptr이 가리키는 값: " << *ptr << std::endl;
+	//std::cout << "ptr이 가리키는 값: " << *ptr << std::endl;
 	
-	delete ptr;
+	//delete ptr;
 	//delete ptr; // 메모리가 해제되었는지 확인하려면 delete한번 더 함
-	delete[ ] dynamicArray; // 0~N까지의 인덱스 메모리 다 삭제
+	//delete[ ] dynamicArray; // 0~N까지의 인덱스 메모리 다 삭제
 
 #pragma endregion
 
@@ -50,13 +52,14 @@ int main()
 	// 여러 범위에서 사용되는 식별자를 구분하는데 사용하는
 	// 연산자입니다.
 
+	// 중괄호 내부 <지역변수>
 	//char character = 'W';
 
 	// 범위 지정 연산자는 전역 변수와 같은 이름의 지역 변수가
 	// 선언되었을 때 가까운 범위에 선언된 변수의 이름을 사용하는
 	// 범위 규칙이 존재하기 때문에 전역 변수가 호출되지 않습니다.
 
-	//std::cout << "character 변수의 값: " << character << std::endl;
+	//std::cout << "character 지역 변수의 값: " << character << std::endl;
 	//std::cout << "character 전역 변수의 값: " << ::character << std::endl;
 
 
