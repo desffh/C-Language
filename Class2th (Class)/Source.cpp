@@ -61,6 +61,8 @@ int main()
 #pragma region 이름 공간 (Name Space)
 	// 속성을 구분할 수 있도록 유효 범위를 
 	// 설정하는 영역입니다.
+	//A::Function();
+	//B::Function();
 
 	//std::cout << "A namespace에 있는 data의 값: " << A::data << std::endl;
 	//std::cout << "B namespace에 있는 data의 값: " << B::data << std::endl;

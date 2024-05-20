@@ -46,7 +46,7 @@ int main()
 	//delete ptr; // 메모리가 해제되었는지 확인하려면 delete한번 더 함
 	//delete[ ] dynamicArray; // 0~N까지의 인덱스 메모리 다 삭제
 
-#pragma endregion
+#pragma endregion 
 
 #pragma region 범위 지정 연산자
 	// 여러 범위에서 사용되는 식별자를 구분하는데 사용하는
@@ -69,7 +69,7 @@ int main()
 
 	//int health = 100;
 	//
-	//int& reference = health;
+	//int & reference = health;
 	//
 	//reference -= 50;
 	//
