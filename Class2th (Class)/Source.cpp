@@ -76,7 +76,7 @@ int main()
 #pragma region 범위 기반 반복문
 
 	//int list[5] = { 10,20,30,40,50 };
-	//
+	
 	//for (const int & element : list) // 해당하는 인덱스에는 접근불가
 	//	// 한번에 다 출력할때 사용
 	//{	// 상수화 const &사용하여 값 고정시킴
@@ -95,11 +95,11 @@ int main()
 	//// 바이트 패딩까지 포함하여 16 byte
 	//
 	//unit.Move();
-	//unit.Information();
-
-	int x = 10;
-
-	int* ptr = &x;
+	//unit.Information();  
+	//
+	//int x = 10;
+	//
+	//int* ptr = &x;
 
 
 
