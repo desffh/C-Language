@@ -17,6 +17,20 @@ void Position(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
 }
 
+class Item
+{
+private:
+	int price;
+	const char* name;
+
+public:
+	void SetData(int price, const char* name)
+	{
+		this->price = price;
+		this->name = name;
+	}
+};
+
 class Input
 {
 private:
@@ -40,7 +54,7 @@ public:
 		cout << shape;
 	}
 	
-	void Getkey()
+	void Getkey(int & index)
 	{
 		key = _getch();
 
@@ -51,21 +65,45 @@ public:
 
 		switch (key)
 		{
-		case UP: y -= 2;
-			break;
-
-		case LEFT: x -= 2;
-			break;
-
-		case RIGHT: x += 2;
-			break;
-
-		case DOWN: y += 2;
-			break;
+		case UP: if (y > 1)
+		{
+			y -= 2;
+			index -= 8;
 		}
+			   break;
+		case LEFT:if (x > 0)
+		{
+			x -= 2;
+			index -= 2;
+		}
+				 break;
+
+		case RIGHT:if (x < 6)
+		{
+			x += 2;
+			index += 2;
+		}
+				  break;
+		case DOWN:if (y < 5)
+		{	
+			y += 2;
+			index += 8;
+		}
+				 break;
+		}
+		
 	}
 
-
+	void Select(Item * item[], int & index)
+	{
+		if (GetAsyncKeyState(VK_SPACE))
+		{
+			if (item[index / 2] == nullptr)
+			{
+				item[index / 2] = new Item();
+			}
+		}
+	}
 
 
 };
@@ -76,20 +114,30 @@ class Inventory
 private:
 	int size;
 	int width;
+	int index;
 
 public:
 	Input input;
 
+	Item* item[12];
+
 	Inventory(int size, int width)
 	{
+		index = 0;
 		this->size = size;
 		this->width = width;
+
+		for (int i = 0; i < size; i++)
+		{
+			item[i] = nullptr;
+		}
 
 	}
 	
 	void Update()
 	{
-		input.Getkey();
+		input.Getkey(index);
+		input.Select(item, index);
 	}
 
 	void Renderer()
@@ -114,10 +162,34 @@ public:
 				cout << endl << endl;
 			}
 
-			cout << "□";
+			if (item[i] == nullptr)
+			{
+				cout << "□";
+			}
+			else
+			{
+				cout << "■";
+			}
+
+
+		
 		}
 		input.Renderer();
+
+		//cout << index/2 << endl;
 	}
+
+	~Inventory()
+	{
+		for (int i = 0; i < 12; i++)
+		{
+			if (item[i] != nullptr)// 데이터가 있다
+			{
+				delete item[i];
+			}
+		}
+	}
+
 };
 
 
@@ -125,12 +197,23 @@ public:
 int main()
 {
 	Inventory inventory(12,4);
-
+	
 	while (true)
 	{
 		inventory.Renderer();
 		inventory.Update();
 		system("cls");
+	}
+
+	
+
+	Item* item[12];
+
+	for (int i = 0; i < 12; i++)
+	{
+		//item[i] = new Item();
+		//item[i] = nullptr; // 다 nullptr로 초기화/ 00000000...
+		//cout << item[i] << endl;
 	}
 
 

@@ -69,12 +69,12 @@ public:
 		this->y = y;
 		this->velocity = velocity;
 	}
-
+	// 복사생성자
 	Bullet(Bullet& clone)
 	{
 		cout << "Copy Constructor" << endl;
 
-		x = clone.x;
+		x = clone.x; // 새로생긴x에 복제된 x넣기
 		y = clone.y;
 		velocity = clone.velocity;
 	}
